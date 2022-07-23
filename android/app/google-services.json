@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "57286671054",
+    "project_id": "magixmuseum",
+    "storage_bucket": "magixmuseum.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57286671054:android:9345f32300921c0e6cee9f",
+        "android_client_info": {
+          "package_name": "com.ipmagix.nmec"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57286671054-jgp7e5sgm9a36kbtsltv7s4kq79eif41.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQlO65Qmfg0Ejoiss5FiFQVYSiScE8Hd0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57286671054-jgp7e5sgm9a36kbtsltv7s4kq79eif41.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

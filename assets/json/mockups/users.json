@@ -1,0 +1,72 @@
+[
+  {
+    "albumId": 1,
+    "userId": 1,
+    "name": "User 1",
+    "url": "https://via.placeholder.com/600/92c952",
+    "thumbnailUrl": "https://via.placeholder.com/150/92c952"
+  },
+  {
+    "albumId": 1,
+    "userId": 2,
+    "name": "User 2",
+    "url": "https://via.placeholder.com/600/771796",
+    "thumbnailUrl": "https://via.placeholder.com/150/771796"
+  },
+  {
+    "albumId": 1,
+    "userId": 3,
+    "name": "User 3",
+    "url": "https://via.placeholder.com/600/24f355",
+    "thumbnailUrl": "https://via.placeholder.com/150/24f355"
+  },
+  {
+    "albumId": 1,
+    "userId": 4,
+    "name": "User 4",
+    "url": "https://via.placeholder.com/600/d32776",
+    "thumbnailUrl": "https://via.placeholder.com/150/d32776"
+  },
+  {
+    "albumId": 1,
+    "userId": 5,
+    "name": "User 5",
+    "url": "https://via.placeholder.com/600/f66b97",
+    "thumbnailUrl": "https://via.placeholder.com/150/f66b97"
+  },
+  {
+    "albumId": 1,
+    "userId": 6,
+    "name": "User 6",
+    "url": "https://via.placeholder.com/600/56a8c2",
+    "thumbnailUrl": "https://via.placeholder.com/150/56a8c2"
+  },
+  {
+    "albumId": 1,
+    "userId": 7,
+    "name": "User 7",
+    "url": "https://via.placeholder.com/600/b0f7cc",
+    "thumbnailUrl": "https://via.placeholder.com/150/b0f7cc"
+  },
+  {
+    "albumId": 1,
+    "userId": 8,
+    "name": "User 8",
+    "url": "https://via.placeholder.com/600/54176f",
+    "thumbnailUrl": "https://via.placeholder.com/150/54176f"
+  },
+  {
+    "albumId": 1,
+    "userId": 9,
+    "name": "User 9",
+    "url": "https://via.placeholder.com/600/51aa97",
+    "thumbnailUrl": "https://via.placeholder.com/150/51aa97"
+  },
+  {
+    "albumId": 1,
+    "userId": 10,
+    "name": "User 10",
+    "url": "https://via.placeholder.com/600/810b14",
+    "thumbnailUrl": "https://via.placeholder.com/150/810b14"
+  }
+]

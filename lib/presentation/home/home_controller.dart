@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:floward/data/models/base/api_status.dart';
 import 'package:floward/data/models/base/ui_state.dart';
 import 'package:floward/data/models/base/ui_state_controller_mixin.dart';
 import 'package:floward/data/models/response/home_response.dart';
@@ -16,30 +19,53 @@ class HomeController extends GetxController with UiStateControllerMixin {
     this._userRepository,
   );
 
+  StreamSubscription? _usersSubscription;
+  StreamSubscription? _postsSubscription;
+
+  final usersUiState = Rx<UiState<UserResponse>>(UiState.idle());
+  final postsUiState = Rx<UiState<PostResponse>>(UiState.idle());
   final homeUiState = Rx<UiState<HomeResponse>>(UiState.idle());
 
-  Future<UiState<UserResponse>> _getAllUsers() async {
-    final responseStatus = await _userRepository.getAllUsers();
+  void _updateUserUiState(ApiStatus<UserResponse> responseStatus) {
     final uiState = mapToUiState<UserResponse>(responseStatus);
-    return uiState;
+    usersUiState.value = uiState;
   }
 
-  Future<UiState<PostResponse>> _getAllPosts() async {
-    final responseStatus = await _postRepository.getAllPosts();
+  void _updatePostsUiState(ApiStatus<PostResponse> responseStatus) {
     final uiState = mapToUiState<PostResponse>(responseStatus);
-    return uiState;
+    postsUiState.value = uiState;
   }
 
-  Future<void> _fetchData() async {
+  void _getAllUsers() => _usersSubscription =
+      _userRepository.getAllUsers().listen(_updateUserUiState);
+
+  void _getAllPosts() => _postsSubscription =
+      _postRepository.getAllPosts().listen(_updatePostsUiState);
+
+  void _fetchData() {
     homeUiState.value = UiState.loading();
-    final userUiState = await _getAllUsers();
-    final postUiState = await _getAllPosts();
-    homeUiState.value = mapToHomeUiState(userUiState, postUiState);
+    _getAllUsers();
+    _getAllPosts();
+  }
+
+  void _onUserUiStateChanged(UiState<UserResponse> usersUiState) =>
+      homeUiState.value = mapToHomeUiState(usersUiState, postsUiState.value);
+
+  void _onPostsUiStateChanged(UiState<PostResponse> postsUiState) =>
+      homeUiState.value = mapToHomeUiState(usersUiState.value, postsUiState);
+
+  @override
+  void onInit() {
+    _fetchData();
+    ever(usersUiState, _onUserUiStateChanged);
+    ever(postsUiState, _onPostsUiStateChanged);
+    super.onInit();
   }
 
   @override
-  void onInit() async {
-    await _fetchData();
-    super.onInit();
+  void onClose() {
+    _usersSubscription?.cancel();
+    _postsSubscription?.cancel();
+    super.onClose();
   }
 }

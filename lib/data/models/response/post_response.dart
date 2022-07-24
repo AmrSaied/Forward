@@ -6,9 +6,7 @@ class PostResponse extends BaseResponse {
 
   PostResponse({required this.postsList});
 
-  Map<String, dynamic> toMap() => {
-        'postsList': postsList.map((e) => e.toMap()).toList(),
-      };
+  List toList() => postsList.map((e) => e.toMap()).toList();
 
   factory PostResponse.fromMap(dynamic map) => PostResponse(
         postsList: (map as List).map((e) {

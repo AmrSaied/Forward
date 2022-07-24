@@ -12,13 +12,9 @@ class ApiConstants {
 }
 
 class CacheStorageKeys {
-  static const basketProductsKey = 'basket_products_key';
-  static const profileModel = 'profile_model';
+  static const posts = 'cached_posts';
+  static const users = 'cached_users';
   static const appLocale = 'app_locale';
-  static const products = 'products';
-  static const addresses = 'addresses';
-  static const authorizations = "authorizations";
-  static const policy = "policy";
 }
 
 enum ENVIRONMENT {

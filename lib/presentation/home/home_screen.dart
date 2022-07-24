@@ -1,7 +1,6 @@
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:floward/data/models/base/ui_state_view_mixin.dart';
 import 'package:floward/data/models/response/home_response.dart';
-import 'package:floward/main.dart';
 import 'package:floward/navigation/app_routes.dart';
 import 'package:floward/presentation/home/home_controller.dart';
 import 'package:floward/presentation/user_posts/user_posts_argument.dart';
